@@ -18,7 +18,7 @@ public:
     ~CompositeOperand();
     long getSize();
     int substract(int input);
-    int add(int input1, int input2);
+    int add();
     int multiply(int input1,int input2);
     void addComponent(Component*);
     void printSize();

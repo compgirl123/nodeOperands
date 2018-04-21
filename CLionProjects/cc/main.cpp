@@ -8,11 +8,13 @@ using namespace std;
 int main() {
     NumericOperation* addition = new NumericOperation("+", 1, 7,1);
     // the two arguments (2nd and third ) are the result of the addition
-    cout <<"HELLO"<< addition->getAdditionNumber1() << endl;
-    cout <<"HELLO"<< addition->getAdditionNumber2() << endl;
-    CompositeOperand* topLevel = new CompositeOperand(addition->add(1,7),"*", 0,0,0);
+    //int addition_number = addition->getAdditionNumber1();
+    /*cout <<"HELLO"<< addition->getAdditionNumber1() << endl;
+    cout <<"HELLO"<< addition->getAdditionNumber2() << endl;*/
+    int total_sum_addition = addition->add();
+    CompositeOperand* topLevel = new CompositeOperand(0,"*", 0,0,0);
     // 1st parameter is the operand mulitiplicaiton result
-    CompositeOperand* midLevel = new CompositeOperand(0,"-", 1,0,0);
+    CompositeOperand* midLevel = new CompositeOperand(0,"-", 1,total_sum_addition,0);
     CompositeOperand* midLevel2 = new CompositeOperand(0,"+", 1,0,0);
     CompositeOperand* bottomLevel = new CompositeOperand(0,"Integer nodes", 2,0,0);
 

@@ -18,7 +18,7 @@ public:
     virtual long getSize() = 0;
     //claudia
     virtual int substract(int input) = 0;
-    virtual int add(int input1, int input2) = 0;
+    virtual int add() = 0;
     virtual int multiply(int input1,int input2) = 0;
     //claudia
     string getName() { return name; }

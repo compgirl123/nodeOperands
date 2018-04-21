@@ -40,16 +40,17 @@ long NumericOperation::getSize() {
 	return this->size;
 }
 
-int NumericOperation::substract(int input) {
-	cout << this->getIndentation() << this->getName() << " size: " << size << endl;
-	return this->size;
-}
 
 int NumericOperation::multiply(int input1,int input2){
 
 }
 
-int NumericOperation::add(int input1,int input2){
-	int sum = input1+input2;
+int NumericOperation::add(){
+	int sum = this->getAdditionNumber1()+this->getAdditionNumber2();
 	return sum;
+}
+
+int NumericOperation::substract(int input) {
+    /*int sum = this->getAdditionNumber1()+this->getAdditionNumber2();
+    return sum;*/
 }

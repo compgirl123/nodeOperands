@@ -34,7 +34,7 @@ int CompositeOperand::substract(int input) {
     int sub = input;
     return sub;
 }
-int CompositeOperand::add(int input1, int input2){
+int CompositeOperand::add(){
 
 }
 int CompositeOperand::multiply(int input1,int input2){
