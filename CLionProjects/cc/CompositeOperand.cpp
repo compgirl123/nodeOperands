@@ -7,11 +7,18 @@
 
 using namespace std;
 
-CompositeOperand::CompositeOperand(int op, string n, int level,int sup, int sum) :
-        Component(op,n, level,sup,sum)
+CompositeOperand::CompositeOperand(string n, int level,int sup, int sum, int multi) :
+        Component(n, level,sup,sum, multi)
 {
 
 }
+
+CompositeOperand::CompositeOperand(string n, int level,int multiplication ) :
+        Component(n, level,multiplication)
+{
+
+}
+
 CompositeOperand::~CompositeOperand()
 {
     for (Component* component : components) {
@@ -24,10 +31,21 @@ void CompositeOperand::addComponent(Component* component) {
 }
 
 long CompositeOperand::getSize() {
-    cout << this->getIndentation()<< this->getName() << endl;
+    cout << this->getIndentation();
+
+    if(this->getName() == "-") {
+        cout << this->getName() << " " << this->getSumUnaryMinus() << endl;
+    }
+    else if(this->getName() == "+") {
+        cout << this->getName() << " "<< this->getSumUnaryPlus() << endl;
+    }
+    else if(this->getName() == "*") {
+        cout << this->getName() << endl;
+    }
     for (Component* component : components) {
         size += component->getSize();
     }
+
     return this->size;
 }
 int CompositeOperand::substract(int input) {
@@ -37,10 +55,10 @@ int CompositeOperand::substract(int input) {
 int CompositeOperand::add(){
 
 }
-int CompositeOperand::multiply(int input1,int input2){
-
+int CompositeOperand::multiply(int input1, int input2){
+    return input1*input2;
 }
 void CompositeOperand::printSize() {
     this->getSize();
-    cout << this->getIndentation() << "Total: " << this->size << endl;
+    //cout << this->getIndentation() << "Total: " << this->size << endl;
 }
