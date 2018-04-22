@@ -20,6 +20,13 @@ public:
 
     Component(string n, int level,int sum) :
             name(n), level(level) , sum_unary_plus(sum){};
+
+    Component(int level,int sum) :
+            level(level) , sum_unary_plus(sum){};
+
+    Component(int level,int integer1, int integer2) :
+            level(level) , integer1(integer1),integer2(integer2){};
+
     ~Component();
 
     virtual long getSize() = 0;

@@ -13,10 +13,11 @@ using namespace std;
 class CompositeOperand: public Component
 {
 public:
-    CompositeOperand(string n, int level,int sup, int sum, int multi)  ; //: Component(n, level);// {
+    CompositeOperand(int level,int sup, int sum)  ; //: Component(n, level);// {
         //this->size = 0;
     //};
-        CompositeOperand(string n, int level,int multiplication);
+        CompositeOperand(int level,int multiplication);
+
     ~CompositeOperand();
     long getSize();
     int substract(int input);

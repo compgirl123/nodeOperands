@@ -7,17 +7,11 @@
 
 using namespace std;
 
-CompositeOperand::CompositeOperand(string n, int level,int sup, int sum, int multi) :
-        Component(n, level,sup,sum, multi)
-{
+CompositeOperand::CompositeOperand(int level,int sup, int sum) :
+        Component(level,sup,sum) {}
 
-}
-
-CompositeOperand::CompositeOperand(string n, int level,int multiplication ) :
-        Component(n, level,multiplication)
-{
-
-}
+CompositeOperand::CompositeOperand(int level,int multiplication ) :
+        Component(level,multiplication) {}
 
 CompositeOperand::~CompositeOperand()
 {

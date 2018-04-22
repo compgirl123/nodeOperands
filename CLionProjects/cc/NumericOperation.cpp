@@ -27,6 +27,10 @@ int NumericOperation::getAdditionNumber2(){
 	return this->getIntegerTwo();
 }
 
+int NumericOperation::getSum(){
+	return this->getSumUnaryPlus();
+}
+
 
 long NumericOperation::getSize() {
 	cout << this->getIndentation() << this->getName() << " size: " << size << endl;
