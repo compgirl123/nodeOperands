@@ -21,8 +21,8 @@ public:
     Component(string n, int level,int sum) :
             name(n), level(level) , sum_unary_plus(sum){};
 
-    Component(int level,int sum) :
-            level(level) , sum_unary_plus(sum){};
+    Component(int level,string n) :
+            level(level) , name(n){};
 
     Component(int level,int integer1, int integer2) :
             level(level) , integer1(integer1),integer2(integer2){};
@@ -30,15 +30,20 @@ public:
     ~Component();
 
     virtual long getSize() = 0;
+    //virtual string fuck() = 0;
     //claudia
     virtual int substract(int input) = 0;
     virtual int add() = 0;
     virtual int multiply(int input1, int input2) = 0;
     //claudia
     string getName() { return name; }
+
     string getIndentation() { return indentation; }
     int getSumUnaryPlus() {return sum_unary_plus; }
     int getSumUnaryMinus() {return sum_unary_minus; }
+    int getLevel(){
+        return level;
+    }
     int getIntegerOne(){return integer1;}
     int getIntegerTwo(){return integer2;}
     int geMultiplication() { return multiplication;}

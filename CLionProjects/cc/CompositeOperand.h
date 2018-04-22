@@ -17,7 +17,7 @@ public:
         //this->size = 0;
     //};
         CompositeOperand(int level,int multiplication);
-
+    CompositeOperand(int level,string name);
     ~CompositeOperand();
     long getSize();
     int substract(int input);
@@ -25,6 +25,7 @@ public:
     int multiply(int input1,int input2);
     void addComponent(Component*);
     void printSize();
+    //string fuck();
 
     NumericOperation *nn;
 

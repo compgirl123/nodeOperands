@@ -10,8 +10,8 @@ using namespace std;
 CompositeOperand::CompositeOperand(int level,int sup, int sum) :
         Component(level,sup,sum) {}
 
-CompositeOperand::CompositeOperand(int level,int multiplication ) :
-        Component(level,multiplication) {}
+CompositeOperand::CompositeOperand(int level,string name ) :
+        Component(level,name) {}
 
 CompositeOperand::~CompositeOperand()
 {
@@ -25,16 +25,37 @@ void CompositeOperand::addComponent(Component* component) {
 }
 
 long CompositeOperand::getSize() {
-    cout << this->getIndentation();
+    cout << this->getName()<< endl;
 
-    if(this->getName() == "-") {
-        cout << this->getName() << " " << this->getSumUnaryMinus() << endl;
-    }
-    else if(this->getName() == "+") {
-        cout << this->getName() << " "<< this->getSumUnaryPlus() << endl;
-    }
-    else if(this->getName() == "*") {
-        cout << this->getName() << endl;
+    for (Component* component : components) {
+        if(component->getName() == "-") {
+            if(component->getIntegerOne()!=0 ||component->getIntegerTwo() !=0) {
+                cout << component->getName() << " : "
+                     << getSumUnaryMinus() << " , "
+                     << component->getIntegerTwo()<< endl;
+            }
+            else{
+                cout << component->getName() << " : "
+                     << component->getSumUnaryPlus()
+                        << endl;
+            }
+
+        }
+
+        else if(component->getName() == "+") {
+            if(component->getIntegerOne()!=0 ||component->getIntegerTwo() !=0) {
+                cout << component->getName() << " : "
+                     << component->getIntegerOne() << " , "
+                     << component->getIntegerTwo()<< endl;
+            } else{
+                cout << component->getName() << " : "
+                     << component->getSumUnaryPlus()
+                     << endl;
+            }
+        }
+        else if(component->getName() == "*") {
+            cout << component->getName() << component->getSumUnaryPlus() << endl;
+        }
     }
     for (Component* component : components) {
         size += component->getSize();
@@ -54,5 +75,4 @@ int CompositeOperand::multiply(int input1, int input2){
 }
 void CompositeOperand::printSize() {
     this->getSize();
-    //cout << this->getIndentation() << "Total: " << this->size << endl;
 }
