@@ -34,7 +34,7 @@ int NumericOperation::getSum(){
 
 long NumericOperation::getSize() {
 	cout << this->getIndentation() << this->getName() << " size: " << size << endl;
-	return this->size;
+	//return this->size;
 }
 
 
