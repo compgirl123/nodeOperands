@@ -33,35 +33,38 @@ int NumericOperation::getSum(){
 
 
 long NumericOperation::getSize() {
-    if(this->getName() == "-") {
-        cout << this->getLevel() << endl;
+
+    if(this->getName() == "-" ) {
         if(this->getIntegerOne()!=0 ||this->getIntegerTwo() !=0) {
-            cout << this->getName() << " : "
+            cout << this->getLevel() << "  "
+                 << this->getName() << " : "
                  << getSumUnaryMinus() << " , "
                  << this->getIntegerTwo()<< endl;
         }
         else{
-           cout << this->getName()<< " : "
+           cout << this->getLevel() << "  "
+                << this->getName()<< " : "
                  << this->getSumUnaryPlus()
                  << endl;
         }
     }
     else if(this->getName() == "+") {
-        cout << this->getLevel() << endl;
         if(this->getIntegerOne()!=0 ||this->getIntegerTwo() !=0) {
 
-            cout << this->getName() << " : "
+            cout << this->getLevel() << "  "
+                 << this->getName() << " : "
                  << this->getIntegerOne() << " , "
                  << this->getIntegerTwo()<< endl;
         } else{
-            cout << this->getName() << " : "
+            cout << this->getLevel() << "  "
+                 << this->getName() << " : "
                  << this->getSumUnaryPlus()
                  << endl;
         }
     }
     else if(this->getName() == "*") {
-        cout << this->getLevel() << endl;
-        cout << this->getName() <<  " : "<<this->getSumUnaryPlus() << endl;
+        cout << this->getLevel() << "  "
+             << this->getName() <<  " : "<< this->getSumUnaryPlus() << endl;
     }
 }
 
