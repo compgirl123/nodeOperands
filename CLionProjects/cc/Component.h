@@ -21,8 +21,8 @@ public:
     Component(string n, int level,int sum) :
             name(n), level(level) , sum_unary_plus(sum){};
 
-    Component(int level,string n) :
-            level(level) , name(n){};
+    Component(int level,string l) :
+            level(level) , name(l){};
 
     Component(int level,int integer1, int integer2) :
             level(level) , integer1(integer1),integer2(integer2){};
@@ -44,6 +44,10 @@ public:
     int getLevel(){
         return level;
     }
+    string getLevelDesc()
+    {
+        return l;
+    }
     int getIntegerOne(){return integer1;}
     int getIntegerTwo(){return integer2;}
     int geMultiplication() { return multiplication;}
@@ -64,5 +68,6 @@ private:
     int integer1;
     int integer2;
     int multiplication;
+    string l;
 };
 

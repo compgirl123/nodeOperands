@@ -33,8 +33,36 @@ int NumericOperation::getSum(){
 
 
 long NumericOperation::getSize() {
-	cout << this->getIndentation() << this->getName() << " size: " << size << endl;
-	//return this->size;
+    if(this->getName() == "-") {
+        cout << this->getLevel() << endl;
+        if(this->getIntegerOne()!=0 ||this->getIntegerTwo() !=0) {
+            cout << this->getName() << " : "
+                 << getSumUnaryMinus() << " , "
+                 << this->getIntegerTwo()<< endl;
+        }
+        else{
+           cout << this->getName()<< " : "
+                 << this->getSumUnaryPlus()
+                 << endl;
+        }
+    }
+    else if(this->getName() == "+") {
+        cout << this->getLevel() << endl;
+        if(this->getIntegerOne()!=0 ||this->getIntegerTwo() !=0) {
+
+            cout << this->getName() << " : "
+                 << this->getIntegerOne() << " , "
+                 << this->getIntegerTwo()<< endl;
+        } else{
+            cout << this->getName() << " : "
+                 << this->getSumUnaryPlus()
+                 << endl;
+        }
+    }
+    else if(this->getName() == "*") {
+        cout << this->getLevel() << endl;
+        cout << this->getName() <<  " : "<<this->getSumUnaryPlus() << endl;
+    }
 }
 
 

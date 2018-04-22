@@ -25,38 +25,7 @@ void CompositeOperand::addComponent(Component* component) {
 }
 
 long CompositeOperand::getSize() {
-    cout << this->getName()<< endl;
 
-    for (Component* component : components) {
-        if(component->getName() == "-") {
-            if(component->getIntegerOne()!=0 ||component->getIntegerTwo() !=0) {
-                cout << component->getName() << " : "
-                     << getSumUnaryMinus() << " , "
-                     << component->getIntegerTwo()<< endl;
-            }
-            else{
-                cout << component->getName() << " : "
-                     << component->getSumUnaryPlus()
-                        << endl;
-            }
-
-        }
-
-        else if(component->getName() == "+") {
-            if(component->getIntegerOne()!=0 ||component->getIntegerTwo() !=0) {
-                cout << component->getName() << " : "
-                     << component->getIntegerOne() << " , "
-                     << component->getIntegerTwo()<< endl;
-            } else{
-                cout << component->getName() << " : "
-                     << component->getSumUnaryPlus()
-                     << endl;
-            }
-        }
-        else if(component->getName() == "*") {
-            cout << component->getName() << component->getSumUnaryPlus() << endl;
-        }
-    }
     for (Component* component : components) {
         size += component->getSize();
     }
