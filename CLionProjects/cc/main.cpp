@@ -7,32 +7,29 @@
 using namespace std;
 
 int main() {
-
     double num;
-    string slash = "/";
-
-    int counter = 0;
-
+    //string slash = "/";
     vector<double> array;
 
-
     cout << "Welcome to the fun program game" << endl;
-
-    cout << "Enter digits. Enter the first one you want to be treated as negative \n"
+    cout << "Do you want a fraction value as unary negative? Y/N -->" << endl;
+    cout << "Enter integers. Enter the first one you want to be treated as negative \n"
          << "and the rest will be treated as either negative or positive"
          << " (enter any non number to stop) -->"<< endl;
 
-    while (cin >> num ){
+    while (cin >> num){
         array.push_back(num);
     }
 
     double negative = array.at(0);
 
+    if(negative > 0) {
+        negative = -1 * array.at(0);
+    }
+
     /*for(int x=0;x<array.size();x++) {
         cout << array.at(x);
     }*/
-
-    // above is just for testing
 
     // FIX NEGATIVE AND POSITIVE STUFF as well as fraction entering !!!
 
@@ -41,7 +38,6 @@ int main() {
     CompositeOperand* bottomLevel = new CompositeOperand(3,"Level 3");
 
     NumericOperation* int_add = new NumericOperation("+",3,array);
-
     NumericOperation* substraction = new NumericOperation("-", 2, negative);
     int sum_positive = int_add->add();
 
@@ -57,7 +53,6 @@ int main() {
     int multi_result = multiplicaion->multiply(sum_negative,sum_positive);
     NumericOperation* multiplication = new NumericOperation("*",1 ,multi_result);
 
-
     topLevel->addComponent(midLevel);
     topLevel->addComponent(multiplication);
 
@@ -68,7 +63,8 @@ int main() {
     bottomLevel->addComponent(int_add);
     bottomLevel->addComponent(subtraction2);
 
-    topLevel->getSize();
+    //topLevel->add();
+    topLevel->getOutput();
 
     cin.get();
 

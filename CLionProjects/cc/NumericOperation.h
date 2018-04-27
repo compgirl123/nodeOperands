@@ -11,24 +11,22 @@ class NumericOperation : public Component
 {
 public:
     NumericOperation(string name, int number1, int number2, int level);
-
     NumericOperation(string name, int level,vector <double> integers);
     NumericOperation(string name, int level,int sum);
     ~NumericOperation();
-    long getSize();
-    int substract(int input);
+
+    long getOutput();
+    int subtraction(int input);
     int add();
     int multiply(int input1,int input2);
     int getAdditionNumber1();
     int getAdditionNumber2();
-    int getNegativeNumber();
     vector <double> getVector();
 
     int getSum();
 
 
 private:
-    //Size of the file, in kB
     long size;
     int sum_unary_minus;
     int sum_unary_plus;

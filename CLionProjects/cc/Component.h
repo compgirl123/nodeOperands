@@ -29,22 +29,18 @@ public:
     // destructor
     ~Component();
 
-    virtual long getSize() = 0;
-
+    virtual long getOutput() = 0;
     virtual int add() = 0;
     virtual int multiply(int input1, int input2) = 0;
+    virtual int subtraction(int input) = 0;
 
-    string getName() { return name; }
-
-    int getSumUnaryPlus() {return sum_unary_plus; }
-
-    int getLevel(){
-        return level;
-    }
-    int getIntegerOne(){return integer1;}
-    int getIntegerTwo(){return integer2;}
+    string getName() {return name;}
     vector <double> getVectorNumbers(){return integers;}
 
+    int getSumUnaryPlus() {return sum_unary_plus;}
+    int getLevel(){return level;}
+    int getIntegerOne(){return integer1;}
+    int getIntegerTwo(){return integer2;}
 
 private:
     string name;
@@ -52,6 +48,7 @@ private:
     int sum_unary_plus;
     int integer1;
     int integer2;
+
     vector <double> integers;
 
 };

@@ -21,25 +21,32 @@ void CompositeOperand::addComponent(Component* component) {
     this->components.push_back(component);
 }
 
-long CompositeOperand::getSize() {
-
+long CompositeOperand::getOutput() {
     for (Component* component : components) {
-        size += component->getSize();
+        size += component->getOutput();
     }
-
     return this->size;
 }
-int CompositeOperand::substract(int input) {
-    //cout << input << endl;
+
+int CompositeOperand::subtraction(int input) {
     int sub = input;
     return sub;
 }
-int CompositeOperand::add(){
 
+int CompositeOperand::add(){
+    for (Component* component : components) {
+        ad += component->add() ;
+    }
+    return this->ad;
 }
+
 int CompositeOperand::multiply(int input1, int input2){
-    return input1*input2;
+    for (Component* component : components) {
+        multi += component->multiply(input1,input2);
+    }
+    return this->multi;
 }
-void CompositeOperand::printSize() {
-    this->getSize();
+
+void CompositeOperand::print() {
+    this->getOutput();
 }

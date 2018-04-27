@@ -36,7 +36,7 @@ int NumericOperation::getSum(){
 }
 
 
-long NumericOperation::getSize() {
+long NumericOperation::getOutput() {
 
     if(this->getName() == "-" ) {
         cout << this->getLevel() << "  "
@@ -69,7 +69,6 @@ long NumericOperation::getSize() {
 
 
 int NumericOperation::add(){
-
     vector <double> sum = this->getVectorNumbers();
     int suma = 0;
 
@@ -80,7 +79,16 @@ int NumericOperation::add(){
 	return suma;
 }
 
-int NumericOperation::substract(int input) {
+int NumericOperation::subtraction(int input) {
+    int sub = 0;
+    if(input > 0) {
+        sub = -1 * input;
+    }
+    else {
+        sub = input;
+    }
+
+    return sub;
 }
 
 int NumericOperation::multiply(int input1, int input2){
