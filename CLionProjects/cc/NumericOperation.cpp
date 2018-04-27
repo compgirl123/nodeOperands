@@ -43,39 +43,16 @@ int NumericOperation::getSum(){
 long NumericOperation::getSize() {
 
     if(this->getName() == "-" ) {
-        if(this->getLevel() > 2) {
-            cout << this->getLevel() << "  "
-                 << this->getName() << " : "
-                 << this->getSumUnaryMinus();
-            cout << endl;
-        }
-        else {
-            cout << this->getLevel() << "  "
-                 << this->getName() << " : "
-                 << this->getSumUnaryPlus()// get function from component header
-                 << endl;
-        }
-        /*if(this->getIntegerOne()!=0 ||this->getIntegerTwo() !=0) {
-            cout << this->getLevel() << "  "
-                 << this->getName() << " : "
-                 << getSumUnaryMinus() << " , "
-                 << this->getIntegerTwo()<< endl;
-        }
-        else{
-           cout << this->getLevel() << "  "
-                << this->getName()<< " : "
-               << this->add()
-                   << endl;
-                 //<<this->getSumUnaryPlus()
-
-        }*/
+        cout << this->getLevel() << "  "
+             << this->getName() << " : "
+             << getSum();
+        cout << endl;
     }
     else if(this->getName() == "+") {
-
         if(this->getLevel() > 2) {
             cout << this->getLevel() << "  "
                  << this->getName() << " : ";
-            for(int x=0;x<(this->getVector()).size();x++) {
+            for(int x=1;x<(this->getVector()).size();x++) {
                 cout << this->getVector()[x] << " " ;
             }
             cout << endl;
@@ -87,20 +64,6 @@ long NumericOperation::getSize() {
                  << endl;
         }
 
-        /*if(this->getIntegerOne()!=0 ||this->getIntegerTwo() !=0) {
-
-            cout << this->getLevel() << "  "
-                 << this->getName() << " : "
-                 << endl;
-                 //<< this->getIntegerOne() << " , "
-                 //<< this->getIntegerTwo()<< endl;
-        } else{
-            cout << this->getLevel() << "  "
-                 << this->getName() << " : "
-                    << this->add()
-                 //<< this->getSumUnaryPlus()
-                 << endl;
-        }*/
     }
     else if(this->getName() == "*") {
         cout << this->getLevel() << "  "
@@ -110,12 +73,11 @@ long NumericOperation::getSize() {
 
 
 int NumericOperation::add(){
-	//int sum = this->getAdditionNumber1()+this->getAdditionNumber2();
-    vector <double> sum = this->getVectorNumbers();
 
+    vector <double> sum = this->getVectorNumbers();
     int suma = 0;
 
-    for(int x=0;x<sum.size();x++) {
+    for(int x=1;x<sum.size();x++) {
         suma += sum.at(x);
     }
 
@@ -123,8 +85,6 @@ int NumericOperation::add(){
 }
 
 int NumericOperation::substract(int input) {
-    /*int sum = this->getAdditionNumber1()+this->getAdditionNumber2();
-    return sum;*/
 }
 
 int NumericOperation::multiply(int input1, int input2){

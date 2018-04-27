@@ -33,6 +33,7 @@ long CompositeOperand::getSize() {
     return this->size;
 }
 int CompositeOperand::substract(int input) {
+    //cout << input << endl;
     int sub = input;
     return sub;
 }

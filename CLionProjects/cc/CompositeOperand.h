@@ -13,10 +13,8 @@ using namespace std;
 class CompositeOperand: public Component
 {
 public:
-    CompositeOperand(int level,int sup, int sum)  ; //: Component(n, level);// {
-        //this->size = 0;
-    //};
-        CompositeOperand(int level,int multiplication);
+    CompositeOperand(int level,int sup, int sum)  ;
+    CompositeOperand(int level,int multiplication);
     CompositeOperand(int level,string name);
     ~CompositeOperand();
     long getSize();
@@ -25,7 +23,6 @@ public:
     int multiply(int input1,int input2);
     void addComponent(Component*);
     void printSize();
-    //string fuck();
 
     NumericOperation *nn;
 
