@@ -6,10 +6,6 @@
 #include <iostream>
 
 
-NumericOperation ::NumericOperation(string name, int sum_unary_minus,
-									int sum_unary_plus, int level, int multiplication) :
-		Component(name, level, sum_unary_plus,sum_unary_minus, multiplication) {}
-
 NumericOperation ::NumericOperation(string name, int level,int sum) :
 		Component(name, level,sum) {}
 

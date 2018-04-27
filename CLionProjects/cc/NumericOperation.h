@@ -26,8 +26,6 @@ public:
 
     int getSum();
 
-    NumericOperation(string name, int sum_unary_minus,
-                     int sum_unary_plus, int level, int multiplication);
 
 private:
     //Size of the file, in kB

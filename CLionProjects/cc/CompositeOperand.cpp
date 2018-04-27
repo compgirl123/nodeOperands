@@ -7,9 +7,6 @@
 
 using namespace std;
 
-CompositeOperand::CompositeOperand(int level,int sup, int sum) :
-        Component(level,sup,sum) {}
-
 CompositeOperand::CompositeOperand(int level,string name ) :
         Component(level,name) {}
 

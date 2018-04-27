@@ -28,9 +28,9 @@ int main() {
 
     double negative = array.at(0);
 
-    for(int x=0;x<array.size();x++) {
+    /*for(int x=0;x<array.size();x++) {
         cout << array.at(x);
-    }
+    }*/
 
     // above is just for testing
 
