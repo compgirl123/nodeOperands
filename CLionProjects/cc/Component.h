@@ -4,7 +4,7 @@
 
 #pragma once
 #include <string>
-
+#include <vector>
 using namespace std;
 
 class Component
@@ -18,6 +18,9 @@ public:
     Component(string n, int level,int integer1, int integer2) :
             name(n), level(level) , integer1(integer1),integer2(integer2){};
 
+    Component(string n, int level,vector <double> integers) :
+            name(n), level(level) , integers(integers){};
+
     Component(string n, int level,int sum) :
             name(n), level(level) , sum_unary_plus(sum){};
 
@@ -27,18 +30,17 @@ public:
     Component(int level,int integer1, int integer2) :
             level(level) , integer1(integer1),integer2(integer2){};
 
+
     ~Component();
 
     virtual long getSize() = 0;
-    //virtual string fuck() = 0;
-    //claudia
     virtual int substract(int input) = 0;
     virtual int add() = 0;
     virtual int multiply(int input1, int input2) = 0;
-    //claudia
-    string getName() { return name; }
 
+    string getName() { return name; }
     string getIndentation() { return indentation; }
+
     int getSumUnaryPlus() {return sum_unary_plus; }
     int getSumUnaryMinus() {return sum_unary_minus; }
     int getLevel(){
@@ -50,6 +52,7 @@ public:
     }
     int getIntegerOne(){return integer1;}
     int getIntegerTwo(){return integer2;}
+    vector <double> getVectorNumbers(){return integers;}
     int geMultiplication() { return multiplication;}
 
     void setIndentation() {
@@ -67,7 +70,9 @@ private:
     int sum_unary_minus;
     int integer1;
     int integer2;
+    vector <double> integers;
     int multiplication;
     string l;
+
 };
 
