@@ -24,8 +24,9 @@ NumericOperation::~NumericOperation()
 }
 
 int NumericOperation::getAdditionNumber1(){
-	return this->getIntegerOne();
+    return this->getIntegerOne();
 }
+
 int NumericOperation::getAdditionNumber2(){
 	return this->getIntegerTwo();
 }
@@ -42,7 +43,19 @@ int NumericOperation::getSum(){
 long NumericOperation::getSize() {
 
     if(this->getName() == "-" ) {
-        if(this->getIntegerOne()!=0 ||this->getIntegerTwo() !=0) {
+        if(this->getLevel() > 2) {
+            cout << this->getLevel() << "  "
+                 << this->getName() << " : "
+                 << this->getSumUnaryMinus();
+            cout << endl;
+        }
+        else {
+            cout << this->getLevel() << "  "
+                 << this->getName() << " : "
+                 << this->getSumUnaryPlus()// get function from component header
+                 << endl;
+        }
+        /*if(this->getIntegerOne()!=0 ||this->getIntegerTwo() !=0) {
             cout << this->getLevel() << "  "
                  << this->getName() << " : "
                  << getSumUnaryMinus() << " , "
@@ -51,23 +64,43 @@ long NumericOperation::getSize() {
         else{
            cout << this->getLevel() << "  "
                 << this->getName()<< " : "
-                 << this->getSumUnaryPlus()
-                 << endl;
-        }
+               << this->add()
+                   << endl;
+                 //<<this->getSumUnaryPlus()
+
+        }*/
     }
     else if(this->getName() == "+") {
-        if(this->getIntegerOne()!=0 ||this->getIntegerTwo() !=0) {
+
+        if(this->getLevel() > 2) {
+            cout << this->getLevel() << "  "
+                 << this->getName() << " : ";
+            for(int x=0;x<(this->getVector()).size();x++) {
+                cout << this->getVector()[x] << " " ;
+            }
+            cout << endl;
+        }
+        else {
+            cout << this->getLevel() << "  "
+                 << this->getName() << " : "
+                 << this->getSumUnaryPlus()// get function from component header
+                 << endl;
+        }
+
+        /*if(this->getIntegerOne()!=0 ||this->getIntegerTwo() !=0) {
 
             cout << this->getLevel() << "  "
                  << this->getName() << " : "
-                 << this->getIntegerOne() << " , "
-                 << this->getIntegerTwo()<< endl;
+                 << endl;
+                 //<< this->getIntegerOne() << " , "
+                 //<< this->getIntegerTwo()<< endl;
         } else{
             cout << this->getLevel() << "  "
                  << this->getName() << " : "
-                 << this->getSumUnaryPlus()
+                    << this->add()
+                 //<< this->getSumUnaryPlus()
                  << endl;
-        }
+        }*/
     }
     else if(this->getName() == "*") {
         cout << this->getLevel() << "  "
@@ -77,8 +110,16 @@ long NumericOperation::getSize() {
 
 
 int NumericOperation::add(){
-	int sum = this->getAdditionNumber1()+this->getAdditionNumber2();
-	return sum;
+	//int sum = this->getAdditionNumber1()+this->getAdditionNumber2();
+    vector <double> sum = this->getVectorNumbers();
+
+    int suma = 0;
+
+    for(int x=0;x<sum.size();x++) {
+        suma += sum.at(x);
+    }
+
+	return suma;
 }
 
 int NumericOperation::substract(int input) {

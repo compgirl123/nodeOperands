@@ -18,23 +18,23 @@ int main() {
         array.push_back(num);
     }
 
-    for(int x=0;x<array.size();x++) {
+    /*for(int x=0;x<array.size();x++) {
         cout << array.at(x);
-    }
-    cout << endl;
+    }*/
+    //cout << endl;
 
     CompositeOperand* topLevel = new CompositeOperand(1,"Level 1");
     CompositeOperand* midLevel = new CompositeOperand(2,"Level 2");
     CompositeOperand* bottomLevel = new CompositeOperand(3,"Level 3");
 
-    NumericOperation* int_add = new NumericOperation("+",3, 7, 22);
-    //NumericOperation* int_add = new NumericOperation("+",3,array);
+    //NumericOperation* int_add = new NumericOperation("+",3, 7, 22);
+    NumericOperation* int_add = new NumericOperation("+",3,array);
+
     NumericOperation* substraction = new NumericOperation("-", 2, -5);
     int sum_positive = int_add->add();
 
     int number1 = int_add->getAdditionNumber1();
     int number2 = int_add->getAdditionNumber2();
-
 
     NumericOperation* addition = new NumericOperation("+", 2, sum_positive);
     NumericOperation* subtraction2 = new NumericOperation("-", 3,-5);

@@ -23,6 +23,7 @@ public:
     int getAdditionNumber2();
     int getNegativeNumber();
     vector <double> getVector();
+
     int getSum();
 
     //string fuck();
